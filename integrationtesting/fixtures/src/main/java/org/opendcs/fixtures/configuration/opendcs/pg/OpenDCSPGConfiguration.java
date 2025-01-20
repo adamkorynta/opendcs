@@ -277,7 +277,7 @@ public class OpenDCSPGConfiguration implements Configuration
     {
         return NAME;
     }
-
+    
     @Override
     public OpenDcsDatabase getOpenDcsDatabase() throws Throwable
     {
