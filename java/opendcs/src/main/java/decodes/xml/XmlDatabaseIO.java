@@ -59,6 +59,7 @@ import opendcs.dai.LoadingAppDAI;
 import opendcs.dai.PlatformStatusDAI;
 import opendcs.dai.ScheduleEntryDAI;
 
+import org.apache.commons.lang.NotImplementedException;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
@@ -764,6 +765,19 @@ public class XmlDatabaseIO extends DatabaseIO
 			}
 		}
 		catch(java.io.IOException e) { }
+	}
+
+	/**
+	 * Returns the list of NetworkList objects defined in this database.
+	 * Objects in this list may be only partially populated (key values
+	 * and primary display attributes only).
+	 * @param nll object in which to store data
+	 * @param tmType the transport medium type to filter on.
+	 */
+	public void readNetworkListList( NetworkListList nll, String tmType)
+			throws DatabaseException
+	{
+		throw new NotImplementedException("XmlDatabaseIO.readNetworkListList with filter not implemented");
 	}
 	
 	/**

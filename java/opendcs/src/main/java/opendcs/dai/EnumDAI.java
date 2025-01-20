@@ -16,6 +16,7 @@ import decodes.db.DbEnum;
 import decodes.db.EnumList;
 import decodes.sql.DbKey;
 import decodes.tsdb.DbIoException;
+import org.opendcs.database.api.OpenDcsDao;
 
 /**
  * Data Access Interface for database-resident enumerations
