@@ -232,7 +232,7 @@ public class CwmsOracleConfiguration implements Configuration
         }
         return false;
     }
-
+    
     @Override
     public OpenDcsDatabase getOpenDcsDatabase() throws Throwable
     {
