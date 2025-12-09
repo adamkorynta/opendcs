@@ -310,10 +310,8 @@ public abstract class TimeSeriesDb implements HasProperties, DatabaseConnectionO
     public void postConnectInit(String appName, Connection conn)
         throws BadConnectException
     {
-        determineTsdbVersion(conn, this);
-
         // If an application name is provided, lookup the ID.
-        if (appName != null && appName.trim().length() > 0)
+        if (appName != null && !appName.trim().isBlank())
         {
             try(LoadingAppDAI loadingAppDAO = makeLoadingAppDAO())
             {
@@ -908,7 +906,10 @@ public abstract class TimeSeriesDb implements HasProperties, DatabaseConnectionO
             {
                 String nm = rs.getString(1);
                 String vl = rs.getString(2);
-                setProperty(nm, vl);
+				if(!nm.isBlank() && !vl.isBlank())
+				{
+					setProperty(nm, vl);
+				}
             }
         }
         catch(Exception ex)
